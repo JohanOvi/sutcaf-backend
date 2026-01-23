@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.v1 import customers, products, invoices
+from app.api.v1 import customers, products, invoices, catalogs
 from contextlib import asynccontextmanager
 from app.infrastructure.db.init_db import init_db
 
@@ -19,3 +19,4 @@ app = FastAPI(
 app.include_router(customers.router, prefix="/api/v1")
 app.include_router(products.router, prefix="/api/v1")
 app.include_router(invoices.router, prefix="/api/v1")
+app.include_router(catalogs.router, prefix="/api/v1")
